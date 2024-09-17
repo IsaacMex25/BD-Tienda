@@ -1,0 +1,9 @@
+CREATE DATABASE Tienda;
+
+Create table Productos
+(
+IDProducto int primary_key,
+Nombre varchar (50),
+Descripción varchar(255),
+Precio decimal (6,2)
+);
