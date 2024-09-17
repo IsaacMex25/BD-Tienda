@@ -1,9 +1,14 @@
-CREATE DATABASE Tienda;
-
-Create table Productos
+/*Procedimiento para insertar productos*/
+DELIMITER //
+DROP PROCEDURE if EXISTS p_insertarproductos;
+CREATE PROCEDURE p_insertarproductos 
 (
-IDProducto int primary_key,
-Nombre varchar (50),
-Descripción varchar(255),
-Precio decimal (6,2)
-);
+ IN _nombre VARCHAR(50),
+ IN _descripcion VARCHAR(255),
+ IN _precio decimal(6,2)
+)
+BEGIN
+ INSERT INTO tienda (nombre, descripcion, precio) VALUES 
+ (_nombre, _descripcion, _precio);
+END //
+DELIMITER ;
