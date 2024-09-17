@@ -1,14 +1,10 @@
-/*Procedimiento para insertar productos*/
+/*Procedimiento para Eliminar producto*/
 DELIMITER //
-DROP PROCEDURE if EXISTS p_insertarproductos;
-CREATE PROCEDURE p_insertarproductos 
-(
- IN _nombre VARCHAR(50),
- IN _descripcion VARCHAR(255),
- IN _precio decimal(6,2)
+DROP PROCEDURE if EXISTS p_eliminarproducto;
+CREATE PROCEDURE p_eliminarproducto (
+ IN p_idproducto INT
 )
 BEGIN
- INSERT INTO tienda (nombre, descripcion, precio) VALUES 
- (_nombre, _descripcion, _precio);
+ DELETE FROM docentes WHERE idproducto = p_idproducto;
 END //
 DELIMITER ;
